@@ -502,18 +502,18 @@ def __chat_settings__(chat_id, user_id):
 __help__ = """
 {}
 
-*Admin only:*
- - /welcome <on/off>: enable/disable welcome messages.
- - /welcome: shows current welcome settings.
- - /welcome noformat: shows current welcome settings, without the formatting - useful to recycle your welcome messages!
- - /goodbye -> same usage and args as /welcome.
- - /setwelcome <sometext>: set a custom welcome message. If used replying to media, uses that media.
- - /setgoodbye <sometext>: set a custom goodbye message. If used replying to media, uses that media.
- - /resetwelcome: reset to the default welcome message.
- - /resetgoodbye: reset to the default goodbye message.
- - /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
- - /clearjoin <on/off>: when someone joins, try to delete the *user* joined the group message.
- - /welcomehelp: view more formatting information for custom welcome/goodbye messages.
+*Apenas administradores:*
+ - /welcome <on/off>: liga/desliga a mensagem de boas-vindas.
+ - /welcome: mostra a mensagem de boas-vindas atual.
+ - /welcome noformat: mostra as configurações atuais de boas-vindas, sem a formatação - útil para reciclar suas mensagens de boas vindas!
+ - /goodbye -> mensagem de despedida. Mesmo uso e argumentos do comando /welcome.
+ - /setwelcome <texto>: definir uma mensagem de boas-vindas personalizada. Se usado respondendo a uma mídia, usa essa mídia.
+ - /setgoodbye <texto>: definir uma mensagem de despedida personalizada. Se usado respondendo a uma mídia, usa essa mídia.
+ - /resetwelcome: redefine a mensagem de boas-vindas para o padrão.
+ - /resetgoodbye: redefine a mensagem de despedida para o padrão.
+ - /cleanwelcome <on/off>: quando entrar um novo membro, tenta apagar a mensagem de boas-vindas anterior (o limite para a exclusão de mensagens antigas é 48h).
+
+ - /welcomehelp: ver mais informações sobre como formatar as mensagens personalizadas de boas-vindas/despedida.
 
 """.format(WELC_HELP_TXT)
 
