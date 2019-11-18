@@ -458,7 +458,7 @@ WELC_HELP_TXT = "As mensagens de boas-vindas / despedidas do seu grupo podem ser
                 " - `{{id}}`: Isso representa o usuário *id*\n" \
                 " - `{{count}}`: Isso representa o número de membro * do usuário *.\n" \
                 " - `{{chatname}}`:Isso representa o * nome atual de bate-papo * .\n" \
-                "\nCada variável deve ser cercada por `{{}}" ser substituído.\n" \
+                "\nCada variável deve ser cercada por `{{}}` ser substituído.\n" \
                 "As mensagens de boas-vindas também suportam Markdown, para que você possa fazer qualquer elemento ousal / itálico / código / links." \
                 "Os botões também são suportados, para que você possa fazer seus boas-vindos parecem incríveis com alguma introdução legal " \
                 "Botões.\n" \
