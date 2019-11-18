@@ -445,29 +445,29 @@ def clean_welcome(bot: Bot, update: Update, args: List[str]) -> str:
         return ""
 
 
-WELC_HELP_TXT = "As mensagens de boas-vindas / despedidas do seu grupo podem ser personalizadas de várias maneiras.  Se você quiser as mensagens" \
-                " para ser gerado individualmente, como é a mensagem de boas-vindas padrão, você pode usar * estas * variáveis:\n" \
-                " - `{{first}}`: isso representa o * first * do usuário\n" \
-                " - `{{last}}`: Isso representa o nome * último *. Nome para padrão * * Nome do usuário se o usuário tiver\n" \
+WELC_HELP_TXT = "Your group's welcome/goodbye messages can be personalised in multiple ways. If you want the messages" \
+                " to be individually generated, like the default welcome message is, you can use *these* variables:\n" \
+                " - `{{first}}`: this represents the user's *first* name\n" \
+                " - `{{last}}`: this represents the user's *last* name. Defaults to *first name* if user has no " \
                 "last name.\n" \
-                " - `{{fullname}}`:  Isso representa o nome * * completo *. Padrões para * Nome primeiro * Se o usuário não tiver\n" \
+                " - `{{fullname}}`: this represents the user's *full* name. Defaults to *first name* if user has no " \
                 "last name.\n" \
-                " - `{{username}}`: Isso representa o usuário de usuário *. Padrão para um * mencionar * do usuário" \
-                "Primeiro nome se não tiver nome de usuário.\n" \
-                " - `{{mention}}`:Isso simplesmente menciona * um usuário - marcando-os com seu primeiro nome .\n" \
-                " - `{{id}}`: Isso representa o usuário *id*\n" \
-                " - `{{count}}`: Isso representa o número de membro * do usuário *.\n" \
-                " - `{{chatname}}`:Isso representa o * nome atual de bate-papo * .\n" \
-                "\nCada variável deve ser cercada por `{{}}` ser substituído.\n" \
-                "As mensagens de boas-vindas também suportam Markdown, para que você possa fazer qualquer elemento ousal / itálico / código / links." \
-                "Os botões também são suportados, para que você possa fazer seus boas-vindos parecem incríveis com alguma introdução legal " \
-                "Botões.\n" \
-                "Para criar um botão que liga a suas regras, use isso: `[Rules](buttonurl://t.me/{}?start=group_id)`. " \
-                "Basta substituir `GROUP_ID 'com a ID do seu grupo, que pode ser obtida via / ID, e você é bom para" \
-                "V. Observe que as IDs de grupo geralmente são precedidas por um sinal `-`; isso é necessário, por isso não por favor" \
-                "remova.\n" \
-                "Se você se sentir divertido, você pode até definir imagens / gifs / vídeos / mensagens de voz como a mensagem de boas-vindas por" \
-                "respondendo à mídia desejada e ligando /setwelcome.".format(dispatcher.bot.username)
+                " - `{{username}}`: this represents the user's *username*. Defaults to a *mention* of the user's " \
+                "first name if has no username.\n" \
+                " - `{{mention}}`: this simply *mentions* a user - tagging them with their first name.\n" \
+                " - `{{id}}`: this represents the user's *id*\n" \
+                " - `{{count}}`: this represents the user's *member number*.\n" \
+                " - `{{chatname}}`: this represents the *current chat name*.\n" \
+                "\nEach variable MUST be surrounded by `{{}}` to be replaced.\n" \
+                "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. " \
+                "Buttons are also supported, so you can make your welcomes look awesome with some nice intro " \
+                "buttons.\n" \
+                "To create a button linking to your rules, use this: `[Rules](buttonurl://t.me/{}?start=group_id)`. " \
+                "Simply replace `group_id` with your group's id, which can be obtained via /id, and you're good to " \
+                "go. Note that group ids are usually preceded by a `-` sign; this is required, so please don't " \
+                "remove it.\n" \
+                "If you're feeling fun, you can even set images/gifs/videos/voice messages as the welcome message by " \
+                "replying to the desired media, and calling /setwelcome.".format(dispatcher.bot.username)
 
 
 @run_async
@@ -502,22 +502,22 @@ def __chat_settings__(chat_id, user_id):
 __help__ = """
 {}
 
-*Apenas administradores:*
- - /welcome <on/off>: liga/desliga a mensagem de boas-vindas.
- - /welcome: mostra a mensagem de boas-vindas atual.
- - /welcome noformat: mostra as configurações atuais de boas-vindas, sem a formatação - útil para reciclar suas mensagens de boas vindas!
- - /goodbye -> mensagem de despedida. Mesmo uso e argumentos do comando /welcome.
- - /setwelcome <texto>: definir uma mensagem de boas-vindas personalizada. Se usado respondendo a uma mídia, usa essa mídia.
- - /setgoodbye <texto>: definir uma mensagem de despedida personalizada. Se usado respondendo a uma mídia, usa essa mídia.
- - /resetwelcome: redefine a mensagem de boas-vindas para o padrão.
- - /resetgoodbye: redefine a mensagem de despedida para o padrão.
- - /cleanwelcome <on/off>: quando entrar um novo membro, tenta apagar a mensagem de boas-vindas anterior (o limite para a exclusão de mensagens antigas é 48h).
-
- - /welcomehelp: ver mais informações sobre como formatar as mensagens personalizadas de boas-vindas/despedida.
+*Admin only:*
+ - /welcome <on/off>: enable/disable welcome messages.
+ - /welcome: shows current welcome settings.
+ - /welcome noformat: shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+ - /goodbye -> same usage and args as /welcome.
+ - /setwelcome <sometext>: set a custom welcome message. If used replying to media, uses that media.
+ - /setgoodbye <sometext>: set a custom goodbye message. If used replying to media, uses that media.
+ - /resetwelcome: reset to the default welcome message.
+ - /resetgoodbye: reset to the default goodbye message.
+ - /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
+ - /clearjoin <on/off>: when someone joins, try to delete the *user* joined the group message.
+ - /welcomehelp: view more formatting information for custom welcome/goodbye messages.
 
 """.format(WELC_HELP_TXT)
 
-__mod_name__ = "🔥Boas-vindas"
+__mod_name__ = "Welcomes/Goodbyes"
 
 NEW_MEM_HANDLER = MessageHandler(Filters.status_update.new_chat_members, new_member)
 LEFT_MEM_HANDLER = MessageHandler(Filters.status_update.left_chat_member, left_member)
