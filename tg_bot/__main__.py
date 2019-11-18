@@ -24,7 +24,7 @@ Eu sou um bot de gerenciamento de grupos construído em python3, usando a biblio
 
 Você pode encontrar a ajuda e a lista de comandos disponíveis utilizando, aqui mesmo no privado do bot, o comando /help.
 
-Se você está gostando de me usar, e/ou gostaria de me ajudar a sobreviver, clique /donate para ajudar a financiar/atualizar meu VPS!
+Peso paciência com o Bot Pos Estou Traduzindo ele todo em Português pra Voces Vlw Por usa o bot
 
 """
 
