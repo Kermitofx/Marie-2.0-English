@@ -18,9 +18,9 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Olá {} meu nome é {} ! Se você tiver alguma dúvida sobre como me usar, leia a ajuda - ou pergunte no @DicasChat.
+🎉💞Olá {} meu nome é {} ! Se você tiver alguma dúvida sobre como me usar, leia a ajuda - ou pergunte no @Encarregada .
 
-Eu sou um bot de gerenciamento de grupos construído em python3, usando a biblioteca python-telegram-bot, e sou totalmente opensource; você pode encontrar o que me faz funcionar aqui!
+Eu sou um bot de gerenciamento de grupos construído em python3, usando a biblioteca python-telegram-bot, e sou totalmente opensource
 
 Você pode encontrar a ajuda e a lista de comandos disponíveis utilizando, aqui mesmo no privado do bot, o comando /help.
 
@@ -37,19 +37,17 @@ Principais comandos disponíveis:
  - /start: inicia o bot.
  - /help: envia esta mensagem no privado.
  - /help <nome do módulo>: envia a ajuda do módulo específico no privado.
- - /donate: informações sobre como contribuir!
  - /settings:
    - no privado: irá enviar-lhe as suas configurações para todos os módulos suportados.
    - no grupo: irá redirecioná-lo para o privado, com todas as configurações do grupo.
 
 
-Os comandos podem ser acionados com / ou !.
+
 
 Ajudas indivuduais para os módulos:
 
 {}
-And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll of the following commands  / or ! can  be used...\n")
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nOs comandos podem ser acionados com / ou !.\n")
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 It took lots of work for [my creator](t.me/SonOfLars) to get me to where I am now, and every donation helps \
